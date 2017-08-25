@@ -22,6 +22,8 @@ public class TimelessRepository {
 
 	public void create(Timesheet item) {
 
+		System.out.println("Hello from the Monday hours variable " + Double.toString(item.getMondayHours()));
+		
 		if (listSize != 0) {
 			item.setId(listSize + 1);
 		} else if (listSize == 0) {
@@ -34,13 +36,15 @@ public class TimelessRepository {
 
 		try (FileWriter writer = new FileWriter(file, true); CSVPrinter printer = CSVFormat.DEFAULT.print(writer)) {
 
+			//System.out.println(Double.toString(item.getMondayHours()));
+			
 			String[] fullTimesheet = { Integer.toString(item.getId()), item.getWeekOf(),
 					Double.toString(item.getMondayHours()), Double.toString(item.getTuesdayHours()),
 					Double.toString(item.getWednesdayHours()), Double.toString(item.getThursdayHours()),
 					Double.toString(item.getFridayHours()), Boolean.toString(item.getIsComplete()) };
-
 			printer.printRecord(fullTimesheet);
-
+					//item.setMondayHours(3.5);
+					//System.out.println("Hello from the statically assigned mondayHours: " + item.getMondayHours());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

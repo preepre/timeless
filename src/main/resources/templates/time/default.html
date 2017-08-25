@@ -6,101 +6,97 @@
 <body>
 
 
-<h2>Timeless </h2>
+	<h2>Timeless</h2>
 
-<div>
+	<div>
 
-<form method="post" action="/timeless">
-	
-<table>
-	<thead>
-      <tr>
-        <th>Week of</th>
-        <th>Monday</th>
-        <th>Tuesday</th>
-        <th>Wednesday</th>
-        <th>Thursday</th>
-        <th>Friday</th>
-        <th>Total Week Hours</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>	
+		<form method="post" action="/timeless">
 
-
-	
-	<tr>		
-					
-		<td>			
-		<input autofocus required type="date" name="weekOf" placeholder="Week Entry">
-		</td>
-		
-		<td>
-		<input required type="text" name="mon" placeholder="Monday hours">
-		</td>
-			
-		<td>	
-		<input required type="text" name="tues" placeholder="Tuesday hours">
-		</td>
-
-		<td>
-		<input required type="text" name="wed" placeholder="Wednesday hours">
-		</td>
-	
-		<td>
-		<input required type="text" name="thurs" placeholder="Thursday hours">
-		</td>
-		
-		<td>
-		<input required type="text" name="fri" placeholder="Friday hours">
-		</td>
-		
-
-		
-		<td>		
-					
-		</td>
-
-		<td>
-		<button name="buttons" value="update">Update</button>		
-		</td>
-		
-		<td>
-		<button name="buttons" value="submit">Submit</button>
-		</td>
-							
-	</tr>
-
-	
-	</table>
-	
-</form>
-</div>
-
-<div>
+			<table>
+				<thead>
+					<tr>
+						<th>Week of</th>
+						<th>Monday</th>
+						<th>Tuesday</th>
+						<th>Wednesday</th>
+						<th>Thursday</th>
+						<th>Friday</th>
+						<th>Total Week Hours</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
 
 
-      {{#hasTimesheetList}}
-        <table>
-          <thead>
-            <tr>
-              <th>Item</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#timesheetList}}
-            	<td> Item
-                 </td>
-              </tr>
-            {{/timesheetList}}
-          </tbody>
-        </table>
-      {{/hasTimesheetList}}
-            
-            
-	
-</div>
+
+				<tr>
+
+					<td><input autofocus required type="date" name="weekOf"
+						placeholder="Week Entry"></td>
+
+					<td><input required type="text" name="mondayHours"
+						placeholder="Monday hours"></td>
+
+					<td><input required type="text" name="tuesdayHours"
+						placeholder="Tuesday hours"></td>
+
+					<td><input required type="text" name="wednesdayHours"
+						placeholder="Wednesday hours"></td>
+
+					<td><input required type="text" name="thursdayHours"
+						placeholder="Thursday hours"></td>
+
+					<td><input required type="text" name="fridayHours"
+						placeholder="Friday hours"></td>
+
+
+
+					<td></td>
+
+					<td>
+						<button name="buttons" value="update">Update</button>
+					</td>
+
+					<td>
+						<button name="buttons" value="submit">Submit</button>
+					</td>
+
+				</tr>
+
+
+			</table>
+
+		</form>
+	</div>
+
+	<div>
+
+
+		{{#hasTimesheetList}}
+		<table>
+			<thead>
+				<tr>
+					<th>Item</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				{{#timesheetList}}
+				<td>{{ weekOf }}</td>
+				<td>{{ mondayHours }}</td>
+				<td>{{ tuesdayHours }}</td>
+				<td>{{ wednesdayHours }}</td>
+				<td>{{ thursdayHours }}</td>
+				<td>{{ fridayHours }}</td>
+				</tr>
+				{{/timesheetList}}
+			</tbody>
+		</table>
+		{{/hasTimesheetList}}
+
+
+
+	</div>
 
 </body>
 </html>
